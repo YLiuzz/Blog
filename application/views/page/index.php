@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+	<link rel="shortcut icon" href="assets/ico/favicon.png">
+	<base src="<?=base_url();?>">
 
-    <title>Kelvin - Bootstrap 3 Resume Theme</title>
+    <title>Blog</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -22,17 +23,21 @@
     
     <script src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/smoothscroll.js"></script> 
-    <script src="assets/js/Chart.js"></script>
+	<script src="assets/js/Chart.js"></script>
+	<script>
+		$(function () {
+			
+			$("body").on("click","#logout",function(){
+            location.href="./";	
+        })
+		})
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+
+	</script>
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#nav">
-
+<?php ?>
 	<div id="section-topbar">
 		<div id="topbar-inner">
 			<div class="container">
@@ -43,7 +48,7 @@
 							<li class="menu-item"><a class="smoothScroll" href="#resume" title="Resume"><i class="icon-file"></i></a></li>
 							<li class="menu-item"><a class="smoothScroll" href="#work" title="Works"><i class="icon-briefcase"></i></a></li>
 							<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contact"><i class="icon-envelope"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#login" title="login"><i class="glyphicon glyphicon-off"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" href="#login" title="logout" id="logout"><i class="glyphicon glyphicon-off"></i></a></li>
 
 						</ul><!--/ uL#nav -->
 					</div><!-- /.dropdown -->
