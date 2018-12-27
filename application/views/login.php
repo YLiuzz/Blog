@@ -34,7 +34,7 @@
             },function(data){
               // 
               if(data.sys_code=="200"){
-                location.href="./";
+                location.href="./index";
               }else{
                 alert(data.sys_msg);
               }
