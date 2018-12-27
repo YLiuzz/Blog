@@ -22,4 +22,17 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	function login()
+	{
+		$this->load->view('login');
+	}
+
+	function logout(){
+		
+		$this->session->sess_destroy();
+		
+		redirect('./','refresh');
+		
+	}
 }
