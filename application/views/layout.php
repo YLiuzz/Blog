@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>造口頁</title>
+    <title>Blog後台</title>
 
     <!-- Bootstrap -->
     <link href="./blog_assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -72,8 +72,7 @@
                 <img src="" alt="" class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2 class="layout_title"></h2>
+                <span>Welcome,<?=$_SESSION['user_id']; ?></span>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -82,15 +81,14 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>造口頁</h3>
+                <h3>Blog</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-font"></i> 最新消息管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-font"></i> 文章內容管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="./gentelella/news_list">消息列表</a></li>
-                      <li><a href="./gentelella/news_add">新增消息</a></li>
+                      <li><a href="./gentelella/news_list">文章列表</a></li>
                     </ul>
                   </li>                     
-                  <li><a href="./gentelella/join_list"><i class="fa fa-file-image-o"></i> 參加人數總覽</a></li>
+                  <li><a href="./gentelella/join_list"><i class="fa fa-file-image-o"></i> 個人資料設定</a></li>
                 </ul>
               </div>
             </div>
@@ -125,11 +123,11 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="" alt="" class="profile_img"><span class="layout_title"></span>
+                    <img src="" alt="" class="profile_img"><span class="layout_title">使用者:<?=$_SESSION['user_id']; ?></span>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:void(0)" class="logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a id='logout' class="logout"><i class="fa fa-sign-out pull-right"></i>登出</a></li>
                   </ul>
                 </li>
               </ul>
@@ -213,41 +211,13 @@
 <script>
 
   $(function(){
-      // 判斷角色
-      var myId = "<?=$_SESSION['user_id']; ?>";
-      $.ajax({
-          url : "./api_gentelella/get_manager",
-          data : {
-              "manager_id" : myId
-          },
-          dataType : "json"
-      }).done(function(data){
-          // 分角色出現按鈕 0管理員
-          var level = data.manager_info.level;
-          console.log(level)
-          var levelName = "";
-              console.log(level)
-          switch ( level ){
-              case "0" :
-                  levelName = "管理員"
-              break;
-          }
-          $(".layout_title").text( levelName + "：" + data.manager_info.manager_name);
-      })
 
-      $(".logout").click(function(e){
-        e.preventDefault();
-        $.ajax({
-          url : 'api_gentelella/logout',
-          dataType : 'json',
-          type : "post"
-        }).done(function(data){
-          console.log(data)
-          if( data.sys_code == 200 ){
-            location.href = './gentelella/login'
-          }
+    $("body").on("click","#logout",function(){
+            location.href="./logout";	
         })
-      })
+    
+
+      
   })
   </script>
 </html>
