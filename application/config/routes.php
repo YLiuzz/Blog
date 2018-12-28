@@ -53,6 +53,8 @@ $route['default_controller'] = 'welcome/login';
 $route['blog_back'] = 'blog_back/layout';
 $route['logout'] = 'welcome/logout';
 $route['login'] = 'welcome/login';
+$route['blog_list'] = 'blog_back/blog_list';
+
 
 
 

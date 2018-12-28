@@ -85,7 +85,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-font"></i> 文章內容管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="./gentelella/news_list">文章列表</a></li>
+                      <li><a href="./blog_list">文章列表</a></li>
                     </ul>
                   </li>                     
                   <li><a href="./gentelella/join_list"><i class="fa fa-file-image-o"></i> 個人資料設定</a></li>
@@ -127,6 +127,7 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a id='visit' class="visit"><i class="fa fa-angle-double-right pull-right"></i>回到Blog</a></li>
                     <li><a id='logout' class="logout"><i class="fa fa-sign-out pull-right"></i>登出</a></li>
                   </ul>
                 </li>
@@ -214,6 +215,9 @@
 
     $("body").on("click","#logout",function(){
             location.href="./logout";	
+        })
+    $("body").on("click","#visit",function(){
+            location.href="./index";	
         })
     
 

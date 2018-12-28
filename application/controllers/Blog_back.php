@@ -16,6 +16,22 @@ class Blog_back extends CI_Controller {
         
     }
 
+    public function blog_list()
+    {
+        $this->load->model('mod_user');
+        $this->load->model('mod_blog_list');
+        $this->mod_user->chk_status();
+
+        $data = array(
+            'title'=>'文章列表',
+            'path'=> 'page/blog_list',
+            'datalist'=> $this->mod_blog_list->get_list(),
+
+        );
+        $this->load->view('layout',$data);
+
+    }
+
 
 
 
