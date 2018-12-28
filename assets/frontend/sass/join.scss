@@ -1,0 +1,130 @@
+@import "_setting";
+@import "_pm";
+.form_errormsg{
+    text-align: left;
+}
+.joinh2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.join2{
+    @include span(6);
+}
+    .j2Wrapper{
+        padding: 0 43px;
+        box-sizing: border-box;
+    }
+        .j2wright{
+            border-left: 1px solid $grayline;
+        }
+        .joinleftS2Wrapper{
+            @include clearfix;
+        }
+        .joinleftS2{
+            @include span(6);
+        }
+        .stepFakeDiv{
+            position: relative;
+            background-image: url(../images/pw-step1.png);
+            background-repeat: no-repeat;
+            &:after{
+                padding-top: 16.9%;
+                content: "";
+                display: block;
+                pointer-events: none;
+            }
+        }
+        .nextcheck_password{
+            font-size: $f14px;
+            text-decoration: none;
+            color: $grayp;
+        }
+        #stepDivGrayLeft{
+            pointer-events: none;
+            .j2title{
+                color: $grayFake;
+            }
+            .redcheckbox{
+                color: $grayFake;
+            }
+            .nextcheck_password{
+                color: $grayFake;
+            }
+        }
+        .stepFakeDiv{
+            background-image: url(../images/pw-step1.png);
+            // background-size: 100% 100%;
+            background-position: center center;
+        }
+        #stepDivGrayRight{
+            .stepFakeDiv{
+                background-image: url(../images/join-step1-disabled.png);
+            }
+            .j2title , .j2p , .j2p2{
+                color: $grayFake;
+            }
+        }
+        .j2CountDown{
+            font-size: $f14px;
+            font-weight: bold;
+            span{
+                font-size: $f20px;
+                color: $darkred;
+                font-weight: normal;
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+        }
+    .j2title{
+        text-align: center;
+        color: $darkred;
+        font-size: $f24px;
+        margin-bottom: 30px;
+    }
+        .j2titleFix{
+            font-size: $f24_fixpx !important;
+        }
+    .j2p{
+        font-size: $f14px;
+        color: $grayp;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        // text-align: center;
+        line-height: 130%;
+        text-align: justify;
+    }
+    .j2p2{
+        font-size: $f14px;
+        color: $grayp;
+        line-height: 185%;
+    }
+    .fe_join_mb1{
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+    .fe_join_mb2{
+        margin-top: -15px;
+        margin-bottom: 15px;
+    }
+    .joinbtn , .joinbtn_again{
+        display: inline-block;
+        width: 100%;
+    }
+    .joinTable{
+        display: table;
+        .joinTableCell{
+            display: table-cell;
+            width: 50%;
+        }
+    }
+    .join640{
+        display: none;
+    }
+    .brownbtn{
+        letter-spacing: 4px;
+    }
+#code{
+    font-size: 15px;
+    padding: 12px 10px;
+}
+@import "_join640"

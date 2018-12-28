@@ -1,0 +1,10 @@
+@import "_setting";
+@import "_pm";
+.media_pc{
+    display: block;
+}
+.media_m{
+    display: none;
+}
+
+@import "_media640"

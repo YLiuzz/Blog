@@ -32,7 +32,7 @@ class Welcome extends CI_Controller {
 		
 		$this->session->sess_destroy();
 		
-		redirect('./','refresh');
+		redirect('../','refresh');
 		
 	}
 }

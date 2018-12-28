@@ -1,0 +1,90 @@
+@import "_setting";
+@import "_pm";
+
+.payfin768{
+    padding-bottom: 75px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+    .paytitle{
+        padding-top: 14%;
+        padding-bottom: 40px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .order_num{
+        font-size: $f16px;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+        span{
+            margin-left: 5px;
+            color: $darkred;
+        }
+    }
+    .fst3-deliver{
+        padding-bottom: 50px;
+        border-bottom: 1px solid $grayline;
+    }
+    .fsb4-data-deliver{
+        @include clearfix;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+    .fsb4-t-payfin{
+        display: none;
+    }
+    .fsb4dd-title{
+        letter-spacing: 4px;
+        font-weight: bold;
+        margin-right: 25px;
+    }
+        .fsb4dd-p{
+            color: #5d5248;
+            margin-right: 40px;
+        }
+
+@media( max-width : 640px ){
+    .fsb4-t-payfin{
+        display: block;
+    }
+    .order_num{
+        font-size: $f16pxM;
+        margin-bottom: 20px;
+    }
+    .fst3-deliver {
+        box-sizing: border-box;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        border-bottom: 0px solid #bdb4a8;
+        border-top: 1px solid #bdb4a8;
+    }
+    .fsb4-data-deliver{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .fsb4dd-fakediv{
+        display: block;
+        @include clearfix;
+    }
+    .fsb4dd-fakediv{
+        display: block;
+    }
+    .fsb4dd-title , .fsb4dd-p{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        box-sizing: border-box;
+    }
+    .fsb4dd-title{
+        @include span(4);
+        margin-right: 0;
+    }
+    .fsb4dd-p{
+        @include span(8);
+        margin-right: 0;
+        font-weight: normal;
+    }
+}

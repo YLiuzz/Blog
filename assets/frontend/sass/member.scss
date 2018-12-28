@@ -1,0 +1,350 @@
+@import "_setting";
+@import "_pm";
+#memberWrapper{
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+.wrapperBg2{
+    background-image: url(../images/bg2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    .member768{
+        padding-top: 8%;
+        padding-bottom: 5%;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 2;
+    }
+        .memberTab{
+            @include clearfix;
+            border-bottom: 1px solid $darkred;
+            #mtab_active{
+                background-color: $darkred;
+                color: white;
+            }
+        }
+        .mtab{
+            @include span(6);
+            color: $gray2;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+            font-size: $f24px;
+        }
+        .orderp{
+            color: $grayp;
+            font-size: $f14px;
+        }
+        .orderNone{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            box-sizing: border-box;
+            .btn{
+                display: block;
+                width: 70%;
+                margin: 10px auto;
+            }
+        }
+        .orderPcTable{
+            width: 100%;
+            th , td {
+                word-wrap: break-word;
+                word-break: break-all;
+            }
+            td{
+                padding-top: 25px;
+                padding-bottom: 25px;
+                box-sizing: border-box;
+                border-bottom: 1px solid $grayline;
+                vertical-align: top;
+            }
+        }
+        .opt_title{
+            p{
+                border-bottom: 1px solid $darkred;
+                font-size: 1rem;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                box-sizing: border-box;
+                width: 92%;
+            }
+        }
+        .opc_detail{
+            td{
+                padding-top: 0;
+                padding-bottom: 0;
+                background-color: #f7e0e0;
+                .opc_detail_div{
+                    position: relative;
+                    width: 100%;
+                    top: -1px;
+                    padding: 8px 30px;
+                    box-sizing: border-box;
+                    background-color: #f7e0e0;
+                }
+            }
+        }
+            .opt_order{width:14%}
+            .opt_name{width:14%}
+            .opt_price{width:11%}
+            .opt_num{width:8%}
+            .opt_total{width:18%}
+            .opt_time{width:16%}
+            .opt_payway{width:14%}
+            .opt_count{width:5%}
+        .opc_openDetail , .opc_openDetailm{
+            width: 38px;
+            height: 38px;
+            border: 1px solid $darkred;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            background-image: url('../images/detail.png');
+            cursor: pointer;
+            background-color: transparent;
+            transition: background-color .5s ease;
+            &:hover{
+                border: 1px solid $darkred;
+                background-color: $darkred;
+                background-image: url('../images/detail3.png');
+                background-position: -4px -40px;
+            }
+            &:active{
+                border: 1px solid #3a2c20;
+                background-color: #3a2c20;
+                background-image: url('../images/detail3.png');
+                background-position: -4px -40px;
+            }
+        }
+        
+            .opcd_close{
+                background-position: -4px -0px; 
+                transition: background-color .5s ease;
+                &:hover{
+                    border: 1px solid $darkred;
+                    background-color: $darkred;
+                    background-image: url('../images/detail3.png');
+                    background-position: -4px -0px; 
+                }
+                &:active{
+                    border: 1px solid #3a2c20;
+                    background-color: #3a2c20;
+                    background-image: url('../images/detail3.png');
+                    background-position: -4px -0px; 
+                }
+            }
+            .opcd_open{
+                background-position: -4px -40px;
+            }
+        .opc_detail_div{
+            padding: 20px 10px;
+            box-sizing: border-box;
+        }
+        .opcod_content{
+            li{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                box-sizing: border-box;
+            }
+            .opcod_li_border{
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                box-sizing: border-box;
+            }
+            .deliver_item{
+                font-size: $f16px;
+            }
+            .deliver_man{
+                font-size: $f14px;
+            }
+            .deliver_man_title{
+                line-height: 160%;
+                span{
+                    margin-right: 35px;
+                }
+            }
+        }
+    // 會員資料
+    .memberDataArea{
+        padding-left: 10%;
+        padding-right: 10%;
+        box-sizing: border-box;
+    }
+    .md_table{
+        width: 100%;
+        color: $grayp;
+        th,td{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            box-sizing: border-box;
+        }
+        th{
+            width: 18%;
+            text-align: right;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+        td:nth-child(2){
+            width: 60%;
+        }
+        td:nth-child(3){
+            width: 22%;
+        }
+    }
+    .memberDataEdit{
+        display: block;
+    }
+    .wantchangePw{
+        font-size: $f14px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+    }
+    .md_tablep{
+        line-height: 40px;
+    }
+    .selectArrow{
+        display: inline-block;
+        width: 40%;
+    }
+    .md_zipcode{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 40%;
+        display: inline-block;
+    }
+.order_m{
+    display: none;
+}
+.pw_m{
+    display: none;
+}
+
+#submitButton{
+    margin : 0 auto;
+}
+#cardview-container{
+    max-width:60%;
+    margin:20px auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    box-sizing:border-box;
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+}
+
+@media(max-width:1024px){
+    .member768{
+        padding-top: 25%;
+    }
+}
+@media(max-width:640px){
+    #cardview-container{
+        max-width: 100%;
+    }
+    .brownbtn , .brownToggleRed , .redbtn{
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+    .member768{
+        padding-top: 15%;
+        padding-bottom: 25%;
+    }
+    .order_pc{
+        display: none;
+    }
+    .order_m{
+        display: block;
+    }
+    .orderArea{
+        padding-left: 5px;
+        padding-right: 5px;
+        box-sizing: border-box;
+    }
+    .orderp{
+        font-size: $f16pxM;
+        text-align: justify;
+        line-height: 200%;
+    }
+    .orderListDiv{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid $gray2;
+    }
+    .orderMTable{
+        box-sizing: border-box;
+        font-size: $f16pxM;
+        th , td{
+            vertical-align: top;
+        }
+    }
+    .detail_m_table{
+        font-size: $f16pxM;
+        th , td{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        th{
+            width: 35%;
+            font-weight: bold;
+        }
+        td{
+            width: 65%;
+        }
+    }
+    .deliver_man_title{
+        margin-bottom: 10px;
+        line-height: 150%;
+    }
+    .omt_order{
+        width: 30%;
+    }
+    .omt_product{
+        width: 65%;
+    }
+    .omt_open{
+        width: 5%;
+    }
+        .optm_title{
+            font-weight: bold;
+        }
+    .memberDataArea{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .md_table{
+        th{
+            text-align: left;
+        }
+    }
+    .selectArrow{
+        display: inline-block;
+        width: 90%;
+    }
+    .md_zipcode{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 90%;
+        display: inline-block;
+    }
+    .orderMDetailDiv{
+        margin-top: 25px;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        background-color: #f7e0e0;
+    }
+    .pw_pc{
+        display: none;
+    }
+    .pw_m{
+        display: table-row;
+    }
+}

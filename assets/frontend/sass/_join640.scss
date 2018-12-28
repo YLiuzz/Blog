@@ -1,0 +1,38 @@
+@media( max-width : 640px ){
+    .join2{
+        @include span(12);
+    }
+    .j2wright{
+        border-left: 0;
+    }
+    .join640{
+        display: block;
+    }
+    .join640or{
+        color: $grayp;
+        position: relative;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: $f16pxM;
+        &:before{
+            content : "";
+            position: absolute;
+            width: 40%;
+            top: 50%;
+            left: 0;
+            border-top: 1px solid $grayp;
+            height: 1px;
+        }
+        &:after{
+            content : "";
+            position: absolute;
+            width: 40%;
+            top: 50%;
+            right: 0;
+            border-top: 1px solid $grayp;
+            height: 1px;
+        }
+    }
+}

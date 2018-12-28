@@ -1,0 +1,40 @@
+@import "susy";
+@import "breakpoint";
+$susy: (
+  columns: 12,
+  gutters: 0,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+
+// color
+$grayline : #bdb4a8;
+$grayFake : #bdb4a8;
+$grayp : #555555;
+$gray2 : #a59e97;
+$darkred : #a90000;
+$bgyellow : #f9f6f1;
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// font
+$f30px : 1.875rem;
+$f24px : 1.5rem;
+$f24_fixpx : 1.3rem;
+$f20px : 1.25rem;
+$f18px : 1.125rem;
+$f16px : 1rem;
+$f14px : 0.875rem;
+$f12px : 0.75rem;
+
+$f16pxM : 1.143rem;
+$f18pxM : 1.286rem;
+$f20pxM : 1.429rem;
+$f22pxM : 1.571rem;

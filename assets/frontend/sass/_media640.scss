@@ -1,0 +1,23 @@
+@media( max-width : 640px ){
+    .media_pc{
+        display: none;
+    }
+    .media_m{
+        display: block;
+    }
+    .media-slide-m{
+        padding: 15px;
+        box-sizing: border-box;
+        img{
+            width: 100%;
+        }
+    }
+    .media_m{
+        width: 100%;
+    }
+    .mediaCycle{
+        overflow: visible !important;
+        width: 80%;
+        margin-left: 10%;
+    }
+}

@@ -1,0 +1,243 @@
+@import "compass/reset";
+@import "_setting";
+@import "_animate";
+@import "_pm";
+
+// fancybox
+
+// form
+textarea , select{
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    border-radius: 0;
+    border: 1px solid $grayline;
+    font-size: $f14px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    background-color: transparent;
+    font-family: Noto Serif,PT Serif,"source-han-serif-tc",Songti TC,serif;
+    transition: background-color .5s ease;
+    &:focus{
+        outline: none;
+        background-color: white;
+    }
+}
+    .selectArrow{
+        position: relative;
+        &:after{
+            position: absolute;
+            top: 50%;
+            right: 6px;
+            content: url(../images/btndown.png);
+            margin-top: -8px;
+            pointer-events: none;
+        }
+    }
+input[type="number"] , input[type="text"] , input[type="password"] , input[type="tel"]{
+    border: 1px solid $grayline;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    border-radius: 0;
+    font-size: $f14px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    background-color: transparent;
+    font-family: Noto Serif,PT Serif,"source-han-serif-tc",Songti TC,serif;
+    transition: background-color .5s ease;
+    &:focus{
+        outline: none;
+        background-color: white;
+    }
+    &:disabled{
+        outline: none;
+        background-color: transparent;
+        &::-webkit-input-placeholder {
+            color: $grayFake;
+        }
+        &:-moz-placeholder {
+            color: $grayFake;
+        }
+        &::-moz-placeholder {
+            color: $grayFake;
+        }
+        &:-ms-input-placeholder {
+            color: $grayFake;
+        }
+    }
+}
+::-webkit-input-placeholder {
+    color: #3a2c20;
+    letter-spacing: 2px;
+}
+:-moz-placeholder {
+    color: #3a2c20;
+    letter-spacing: 2px;
+}
+::-moz-placeholder {
+    color: #3a2c20;
+    letter-spacing: 2px;
+}
+:-ms-input-placeholder {
+    color: #3a2c20;
+    letter-spacing: 2px;
+}
+.inputtac::-webkit-input-placeholder {
+    text-align: center;
+}
+.inputtac:-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+}
+.inputtac::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+}
+.inputtac:-ms-input-placeholder {
+    text-align: center;
+}
+.form_errormsg{
+    font-size:  $f14px;
+    color: $grayp;
+    &:before{
+        content: "！";
+        color: $darkred;
+    }
+}
+input[type="submit"].redbtnlike{
+    border-radius: 0;
+    cursor: pointer;
+    font-family: Noto Serif,PT Serif,"source-han-serif-tc",Songti TC,serif;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    border: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: $f16px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 10px;
+    background: #a90000; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #a90000 3%, #a90000 90%, #970101 90%, #970101 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #a90000 3%,#a90000 90%,#970101 90%,#970101 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #a90000 3%,#a90000 90%,#970101 90%,#970101 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90000', endColorstr='#970101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    &:focus{
+        outline: none;
+    }
+    &:disabled{
+        background: #bdb4a8; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #bdb4a8 3%, #bdb4a8 90%, #b4aba0 90%, #b4aba0 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #bdb4a8 3%,#bdb4a8 90%,#b4aba0 90%,#b4aba0 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #bdb4a8 3%,#bdb4a8 90%,#b4aba0 90%,#b4aba0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdb4a8', endColorstr='#b4aba0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+}
+.btn{
+    color: white;
+    font-size: $f16px;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+    &:after{
+        content:url('../images/btnnext.png');
+        vertical-align: sub;
+    }
+}
+.redbtn{
+    letter-spacing: 10px;
+    padding: 17px 0;
+    background: #a90000; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #a90000 3%, #a90000 90%, #970101 90%, #970101 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #a90000 3%,#a90000 90%,#970101 90%,#970101 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #a90000 3%,#a90000 90%,#970101 90%,#970101 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90000', endColorstr='#970101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+    .redbtnDisable{
+        pointer-events: none;
+        background: #bdb4a8; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #bdb4a8 3%, #bdb4a8 90%, #b4aba0 90%, #b4aba0 100%)!important; /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #bdb4a8 3%,#bdb4a8 90%,#b4aba0 90%,#b4aba0 100%)!important; /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #bdb4a8 3%,#bdb4a8 90%,#b4aba0 90%,#b4aba0 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdb4a8', endColorstr='#b4aba0',GradientType=1 )!important; /* IE6-9 fallback on horizontal gradient */
+    }
+.brownbtn{
+    letter-spacing: 10px;
+    padding: 11px 0;
+    background: #564435; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #564435 3%, #564435i 90%, #3a2c20 90%, #3a2c20 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #564435 3%,#564435 90%,#3a2c20 90%,#3a2c20 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #564435 3%,#564435 90%,#3a2c20 90%,#3a2c20 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#564435', endColorstr='#3a2c20',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+    .brownToggleRed{
+        letter-spacing: 10px;
+        padding: 11px 0;
+        background: #a90000; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #a90000 3%, #a90000 90%, #970101 90%, #970101 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #a90000 3%,#a90000 90%,#970101 90%,#970101 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #a90000 3%,#a90000 90%,#970101 90%,#970101 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90000', endColorstr='#970101',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+label.redcheckbox{
+    font-size: $f14px;
+    color : $grayp;
+}
+.borderbtn{
+    display: block;
+    color: $darkred;
+    border: 1px solid $darkred;
+    letter-spacing: 5px;
+    padding: 17px 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+    &:after{
+        vertical-align: sub;
+    }
+}
+.borderbtn.bbright{
+    &:after{
+        content:url('../images/btnnext-border.png');
+    }
+}
+.borderbtn.bbleft{
+    &:before{
+        vertical-align: sub;
+        margin-right: 8px;
+        content:url('../images/btnleft-border.png');
+    }
+}
+    .fst2_m_btn{
+        font-size: 0.875rem;
+        letter-spacing: 3px;
+        border-width: 1px;
+        border-style: solid;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+        .fst2_redborder{
+            color: $darkred;
+            border-color: $darkred;
+        }
+        .fst2_disabled{
+            color: #a39481;
+            background-color: #eae4d9;
+            border-color: #eae4d9;
+            pointer-events: none;
+        }
+.facyback{
+    display: block;
+    margin: 20px auto;
+    width: 40%;
+}
+@import "_common640";

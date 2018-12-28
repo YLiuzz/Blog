@@ -5,6 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Api extends CI_Controller
 {
 
+    //登入登入相關
     public function login()
     {
         $this->load->model('mod_user');
@@ -29,7 +30,7 @@ class Api extends CI_Controller
         }
         echo json_encode($json_arr);
     }
-    
+
 
 
 

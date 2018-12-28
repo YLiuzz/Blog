@@ -1,0 +1,12 @@
+
+.singlePagetitle{
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+@media(max-width:640px){
+    .singlePagetitle{
+        padding-top: 11%;
+    }
+}

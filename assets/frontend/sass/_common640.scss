@@ -1,0 +1,9 @@
+@media(max-width:640px){
+    .wrapperBg{
+        background-image: url(../images/bgm.jpg);
+        background-size: contain;
+    }
+    .btn{
+        font-size: $f16pxM;
+    }
+}
