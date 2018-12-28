@@ -112,7 +112,8 @@ $(function(){
             };
         }
     });
-    
+
+    //上傳新增文章
     $("body").on("click","#send",function(e){
       e.preventDefault();
       var err = '';
