@@ -15,7 +15,7 @@ class Blog_back extends CI_Controller {
         $this->load->view('layout',$data);
         
     }
-
+    //部落格文章列表
     public function blog_list()
     {
         $this->load->model('mod_user');
@@ -30,6 +30,21 @@ class Blog_back extends CI_Controller {
         );
         $this->load->view('layout',$data);
 
+    }
+
+    // 新增文章
+    public function blog_add()
+    {
+            $this->load->model('mod_user');
+            $this->load->model('mod_blog_list');
+            $this->mod_user->chk_status();
+
+            $data = array(
+            'title' => '新增消息',
+            'path' => 'page/blog_add',
+        );
+            $this->load->view('layout', $data);
+       
     }
 
 

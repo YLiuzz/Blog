@@ -19,15 +19,20 @@
         background-color: #fafafa;
         font-size: 12px;
     }
+    .title_right{
+        position: relative;
+        left: 485px;
+    }
 </style>
 <div class="right_col" role="main">
     <div class="">
         <div class="page-title">
             <div class="title_left">
                 <h3>
-                    <?=$title; ?>
+                    <?=$title;?>
                 </h3>
             </div>
+            <div class='title_right'><h2><a href="./blog_add">新增文章</a></h2></div>
 
         </div>
 

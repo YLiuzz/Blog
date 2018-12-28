@@ -42,12 +42,12 @@
   </head>
   <style>
   .left_col {
-    background: #344da1;
+    background: #333;
   }
   .nav_title {
     width: 230px;
     float: left;
-    background: #344da1;
+    background: #333;
     border-radius: 0;
     height: 57px;
   }
