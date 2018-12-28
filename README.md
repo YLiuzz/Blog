@@ -1,2 +1,2 @@
 # Blog
-簡易Blog架設
+架設簡易Blog
