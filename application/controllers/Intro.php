@@ -12,6 +12,7 @@ class Intro extends CI_Controller {
             'title' => 'Blog',
             'path' => 'page/index',
             'path_text' => ' > 英聽主選單',
+            
         );
         $this->load->view('page/index', $data);
     }

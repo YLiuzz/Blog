@@ -4,12 +4,9 @@
           }
           img{
             max-width:100%;
-            width:345px;
           }
         </style>
-        
         <div class="right_col" role="main">
-
           <div class="">
             <div class="page-title">
               <div class="title_left">
@@ -33,29 +30,29 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">圖片預覽
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <img src="" alt="" id="img">
-                          <input type="hidden" value="" id="img" name="img">
+                          <img src="<?=$data['img']; ?>" alt="" id="img">
                         </div>
                       </div>      
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="news_title">標題 <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="title" name="news_title" required="" class=" form-control col-md-7 col-xs-12">
+                          <input type="text" id="title" name="news_title" value="<?=$data['title']; ?>" required="" class=" form-control col-md-7 col-xs-12">
+                          <input type="hidden" id="sn" value="<?=$_GET['sn']; ?>" name="news_title" required="" class=" form-control col-md-7 col-xs-12">
                         </div>
                       </div>    
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="news_datetime">日期 <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="create_time" name="create_time" required="" class="datetime form-control col-md-7 col-xs-12">
+                          <input type="text" id="create_time" name="create_time" value="<?=$data['create_time']; ?>" required="" class="datetime form-control col-md-7 col-xs-12">
                         </div>
                       </div>                      
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="news_content">內文<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <textarea rows="30" cols="50" name="article" id="article"></textarea>     
+                            <textarea rows="30" cols="50" name="article" id="article"><?=$data['article']; ?></textarea>                                            
                         </div>
                       </div>                                                   
                       <div class="ln_solid"></div>
@@ -77,12 +74,11 @@
 <script>
 $(function(){
     var article_data = '';
-
     $("body").on("click",".cancel",function(){
-      location.href="<?=base_url(); ?>blog_add";
+      location.href="<?=base_url(); ?>blog_list";
     })
 
-    var article = CKEDITOR.replace('article');
+      var article = CKEDITOR.replace('article');
     // var editor_data;
       article.on( 'change',function( evt ) {
       article_data =CKEDITOR.instances.article.getData();
@@ -113,9 +109,7 @@ $(function(){
             };
         }
     });
-
-    //上傳新增文章
-    $("body").on("click","#send",function(e){
+     $("body").on("click","#send",function(e){
       e.preventDefault();
       var err = '';
       if($("#img").attr("src") == ""){
@@ -133,8 +127,8 @@ $(function(){
       if(err != ""){
         alert('以下欄位尚未填寫：'+err+' 請確認後再送出');
       }else{
-        $.post('./api/add_article', {
-          
+        $.post('./api/edit_article', {
+          sn: '<?=$data['sn']?>',
           img:$("#img").attr("src"),
           title:$("#title").val(),
           create_time:$("#create_time").val(),

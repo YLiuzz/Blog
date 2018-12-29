@@ -46,6 +46,23 @@ class Blog_back extends CI_Controller {
             $this->load->view('layout', $data);
        
     }
+    //編輯
+
+      public function blog_edit()
+    {
+        
+            $this->load->model('mod_user');
+            $this->load->model('mod_blog_list');
+            $this->mod_user->chk_status();
+            $sn = $this->input->get_post('sn');
+            $data = array(
+            'title' => '編輯文章',
+            'path' => 'page/blog_edit',
+            'data' => $this->mod_blog_list->get_once($sn),
+        );
+            $this->load->view('layout', $data);
+     
+    }
 
 
 

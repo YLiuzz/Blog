@@ -58,8 +58,8 @@ class Api extends CI_Controller
     public function add_article()
     {
         $this->load->model('mod_blog_list');
-        $getpost = array('img', 'date', 'title', 'content');
-        $requred = array('img', 'date', 'title', 'content');
+        $getpost = array('img', 'create_time', 'title', 'article');
+        $requred = array('img', 'create_time', 'title', 'article');
         $data = $this->getpost->getpost_array($getpost, $requred);
         if ($data == false) {
             $json_arr['sys_code'] = '000';
@@ -72,7 +72,39 @@ class Api extends CI_Controller
         }
         echo json_encode($json_arr);
     }
+
+    //編輯文章
+
+    public function edit_article()
+    {
+       $this->load->model('mod_blog_list');
+         $getpost = array('sn','img', 'create_time', 'title', 'article');
+        $requred = array('sn','img', 'create_time', 'title', 'article');
+        $data = $this->getpost->getpost_array($getpost, $requred);
+        if ($data == false) {
+            $json_arr['sys_code'] = '000';
+            $json_arr['sys_msg'] = '資料不足';
+            $json_arr['requred'] = $this->getpost->report_requred($requred);
+        } else {
+            $this->mod_blog_list->update_once($data);
+            $json_arr['sys_code'] = '200';
+            $json_arr['sys_msg'] = '新增完成';
+        }
+        echo json_encode($json_arr);
+    }
   
+    //刪除文章
+
+     public function remove_article()
+    {
+        $this->load->model('mod_blog_list');
+        $sn = $this->input->get_post('sn');
+        if ($this->mod_blog_list->remove_once($sn)) {
+            $json_arr['sys_code'] = '200';
+            $json_arr['sys_msg'] = '刪除成功';
+        }
+        echo json_encode($json_arr);
+    }
 
 
 

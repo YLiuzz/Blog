@@ -55,6 +55,8 @@ $route['logout'] = 'welcome/logout';
 $route['login'] = 'welcome/login';
 $route['blog_list'] = 'blog_back/blog_list';
 $route['blog_add'] = 'blog_back/blog_add';
+$route['blog_edit'] = 'blog_back/blog_edit';
+
 
 
 

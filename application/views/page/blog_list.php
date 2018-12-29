@@ -81,18 +81,18 @@
     </div>
 </div>
 <!-- /page content -->
-<script src="./gentelella_assets/vendors/jquery/dist/jquery.min.js"></script>
+<script src="./blog_assets/vendors/jquery/dist/jquery.min.js"></script>
 <script>
     $(function() {
         $("body").on("click", ".edit", function() {
             location.href =
-                "<?=base_url(); ?>gentelella/news_edit?sn=" + $(
+                "<?=base_url(); ?>blog_edit?sn=" + $(
                     this).attr('sn');
         })
         $("body").on("click", ".remove", function() {
             var sn = $(this).attr('sn');
             if (confirm("確定要刪除？")) {
-                $.post("./api_gentelella/remove_news", {
+                $.post("./api/remove_article", {
                     sn: sn
                 }, function(data) {
                     location.reload();
