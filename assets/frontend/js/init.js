@@ -1,5 +1,5 @@
-$(function(){
-    $("body").on("click", ".LiSelect", function () {
+$(function() {
+    $("body").on("click", ".LiSelect", function() {
         // $(this).toggleClass("active");
         $(".bottom").stop().slideUp(); //把全部答案欄都關起來
         $(".LiSelect").not(this).attr("data-open", "false"); // 除了被點擊到的.LiSelect以外的.LiSelect，都把html中 data-open裡面的值改成false
@@ -21,17 +21,17 @@ $(function(){
             $(".down").removeClass("active");
         }
     })
-    
-    $(".LiSelect ul li").click(function () {
+
+    $(".LiSelect ul li").click(function() {
         var e = $(this).closest(".LiSelect");
         var tag = $(this).attr("data-tag");
         console.log(tag)
         e.find("span").text($(this).text());
-        e.find("span").attr("data-hash",tag);
+        e.find("span").attr("data-hash", tag);
         e.find('input').val($(this).text());
     });
 
-    $("body").on("click", "#chk", function () {
+    $("body").on("click", "#chk", function() {
         var name = $("#name").val();
         var mobile = $("#mobile").val();
         var type = $("#type").text();
@@ -49,14 +49,14 @@ $(function(){
         }
     })
 
-    $("body").on("change", "#mobile", function () {
+    $("body").on("change", "#mobile", function() {
         var regExp = /^[09]{2}[0-9]{8}$/;
         if (!regExp.test($("#mobile").val())) {
             alert("請輸入正確手機格式");
             $(this).val("");
         }
     })
-    $("body").on("click", "#submit", function () {
+    $("body").on("click", "#submit", function() {
         var name = $("#name").val();
         var mobile = $("#mobile").val();
         var type = $("#type").text();
@@ -70,7 +70,7 @@ $(function(){
                 mobile: $("#mobile").val(),
                 path: $("#path").text(),
                 type: $("#type").text()
-            }, function (data) {
+            }, function(data) {
                 alert(data.sys_msg);
                 if (data.sys_code == '200') {
                     location.href = "type" + hash;
@@ -78,7 +78,7 @@ $(function(){
             }, "json");
         }
     })
-    $('body').on('click', '.go_to_top', function () {
+    $('body').on('click', '.go_to_top', function() {
         var body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
         body.animate({
             scrollTop: 0
@@ -86,12 +86,12 @@ $(function(){
         return false;
     });
 
-    $("body").on("click",".more_info",function(){
+    $("body").on("click", ".more_info", function() {
         var title = $(this).attr("title");
-        var date = $(this).attr("date");
+        var create_time = $(this).attr("create_time");
         var img = $(this).attr("img");
-        var content = $(this).attr("content");
-        $.featherlight({ html: '<div id="lightbox_content" style="background:white;padding:6px 10px"><div><div><p style="color: #666666;font-size: 18px;margin: 20px auto 10px;border-bottom: 1px solid;padding-bottom:20px;">' + title + '</p></div><div><p style="color: #878787;font-size:16px;line-height:1.75;margin:10px auto;">' + date + '</p></div><div><img src="' + img + '"></div><div><p style="color: #878787;font-size:16px;line-height:1.75;margin:10px auto;">' + content +'</p></div></div></div>'});
+        var article = $(this).attr("article");
+        $.featherlight({ html: '<div id="lightbox_content" style="background:white;padding:6px 10px"><div><div><p style="color: #666666;font-size: 18px;margin: 20px auto 10px;border-bottom: 1px solid;padding-bottom:20px;">' + title + '</p></div><div><p style="color: #878787;font-size:16px;line-height:1.75;margin:10px auto;">' + create_time + '</p></div><div><img src="' + img + '"></div><div><p style="color: #878787;font-size:16px;line-height:1.75;margin:10px auto;">' + article + '</p></div></div></div>' });
     })
-    
+
 })

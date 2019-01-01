@@ -108,7 +108,7 @@
 .menu_btn {
     font-size: 13px;
     color: #fff;
-    background-color: #00428F;
+    background-color: #5d5d5d;
     width: 50px;
     padding: 5px;
     text-align: center;
@@ -607,7 +607,7 @@ img.down.active {
 
 .nav_btn {
     width: 95%;
-    background-color: #5480B3;
+    background-color: #5d5d5d;
     color: #fff;
     padding: 20px;
     margin: 10px;
