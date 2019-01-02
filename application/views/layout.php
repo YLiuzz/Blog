@@ -214,7 +214,7 @@
   $(function(){
 
     $("body").on("click","#logout",function(){
-            location.href="./logout";	
+            location.href="./index";	
         })
     $("body").on("click","#visit",function(){
             location.href="./index";	

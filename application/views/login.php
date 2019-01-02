@@ -34,7 +34,7 @@
             },function(data){
               // 
               if(data.sys_code=="200"){
-                location.href="./index";
+                location.href="./blog_list";
               }else{
                 alert(data.sys_msg);
               }

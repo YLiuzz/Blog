@@ -8,7 +8,7 @@ class Intro extends CI_Controller {
     {
         $this->load->model('mod_user');
         $this->load->model('mod_blog_list');
-        $this->mod_user->chk_status();
+        // $this->mod_user->chk_status();
         $data = array(
             'title' => 'Blog',
             'path' => 'page/index',
