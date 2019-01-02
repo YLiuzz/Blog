@@ -56,28 +56,7 @@ $(function() {
             $(this).val("");
         }
     })
-    $("body").on("click", "#submit", function() {
-        var name = $("#name").val();
-        var mobile = $("#mobile").val();
-        var type = $("#type").text();
-        var path = $("#path").text();
-        var hash = $("#type").attr("data-hash");
-        if (name == "" || mobile == "" || type == "請選擇造口種類" || path == "請選擇購買通路") {
-            alert("請填寫資料");
-        } else {
-            $.post('./api/join', {
-                name: $("#name").val(),
-                mobile: $("#mobile").val(),
-                path: $("#path").text(),
-                type: $("#type").text()
-            }, function(data) {
-                alert(data.sys_msg);
-                if (data.sys_code == '200') {
-                    location.href = "type" + hash;
-                }
-            }, "json");
-        }
-    })
+
     $('body').on('click', '.go_to_top', function() {
         var body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
         body.animate({
