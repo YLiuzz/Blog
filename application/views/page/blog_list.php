@@ -46,6 +46,7 @@
                                 <tr>
                                     <th>Blog圖片</th>
                                     <th>標題</th>
+                                    <th>標籤分類</th>
                                     <th>內文</th>
                                     <th>建立日期</th>
                                     <th>操作</th>
@@ -59,6 +60,9 @@
                                     </td>
                                     <td>
                                         <?=$v['title']; ?>
+                                    </td>
+                                     <td>
+                                        <?=$v['classification']; ?>
                                     </td>
                                     <td>
                                         <?=$v['article']; ?>
