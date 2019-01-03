@@ -148,6 +148,7 @@ $(function(){
           img:$("#img").attr("src"),
           title:$("#title").val(),
           create_time:$("#create_time").val(),
+          classification:$('#classification').val(),
           article:article_data,
         }, function(data) {
           alert(data.sys_msg);

@@ -47,7 +47,14 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="create_time" name="create_time" value="<?=$data['create_time']; ?>" required="" class="datetime form-control col-md-7 col-xs-12">
                         </div>
-                      </div>                      
+                      </div>
+                         <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="news_datetime">標籤分類 <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="classification" name="classification" required="" class="datetime form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>                          
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="news_content">內文<span class="required">*</span>
                         </label>
@@ -112,6 +119,7 @@ $(function(){
      $("body").on("click","#send",function(e){
       e.preventDefault();
       var err = '';
+      console.log($("#classification").val());
       if($("#img").attr("src") == ""){
         err = err + "圖片";
       }
@@ -120,6 +128,9 @@ $(function(){
       }
       if($("#title").val() == ""){
         err = err + "標題";
+      }
+       if($("#classification").val() == ""){
+        err = err + "標籤分類";
       }
       if(article_data == ""){
         err = err + "內文";
@@ -132,6 +143,7 @@ $(function(){
           img:$("#img").attr("src"),
           title:$("#title").val(),
           create_time:$("#create_time").val(),
+          classification:$('#classification').val(),
           article:article_data,
         }, function(data) {
           alert(data.sys_msg);

@@ -58,8 +58,8 @@ class Api extends CI_Controller
     public function add_article()
     {
         $this->load->model('mod_blog_list');
-        $getpost = array('img', 'create_time', 'title', 'article');
-        $requred = array('img', 'create_time', 'title', 'article');
+        $getpost = array('img', 'create_time', 'title', 'article','classification');
+        $requred = array('img', 'create_time', 'title', 'article','classification');
         $data = $this->getpost->getpost_array($getpost, $requred);
         if ($data == false) {
             $json_arr['sys_code'] = '000';
@@ -78,8 +78,8 @@ class Api extends CI_Controller
     public function edit_article()
     {
        $this->load->model('mod_blog_list');
-         $getpost = array('sn','img', 'create_time', 'title', 'article');
-        $requred = array('sn','img', 'create_time', 'title', 'article');
+         $getpost = array('sn','img', 'create_time', 'title', 'article','classification');
+        $requred = array('sn','img', 'create_time', 'title', 'article','classification');
         $data = $this->getpost->getpost_array($getpost, $requred);
         if ($data == false) {
             $json_arr['sys_code'] = '000';
