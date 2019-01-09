@@ -57,6 +57,32 @@ class Mod_blog_list extends CI_Model
         return true;
     }
 
+    //取出最新文章
+
+    public function get_new_article($sn= '')
+    {
+        if ($sn != '') {
+            $this->db->where($sn);
+        }
+        $data= $this->db->order_by('sn','desc')->get('blog_article')->result_array();
+
+        return $data;
+
+    }
+
+    //搜尋tag標籤
+
+    public function tag_search($id)
+    {
+     
+        $this->db->where('classification', $id);
+        $data = $this->db->get('blog_article')->row_array();
+       
+       
+        return $data;
+      
+    }
+
 
 
 

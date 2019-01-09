@@ -8,22 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
     <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="./assets/css/font-awesome.min1.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min1.css">
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="./assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="outer-container">
+<?php print_r($datalist);?>
     <header class="site-header">
         <div class="top-header-bar">
             <div class="container-fluid">
@@ -100,10 +98,10 @@
             <div class="col-12">
                 <div class="swiper-container hero-slider">
                     <div class="swiper-wrapper">
-                    <?php foreach ($datalist as $k => $v): ?>
+                    <?php foreach ($datalist as $ky => $vy): ?>
                         <div class="swiper-slide">
                             <div class="hero-content flex justify-content-center align-items-center flex-column">
-                                <img src="<?=$v['img']?>" alt="">
+                                <img src="<?=$vy['img']?>" alt="">
                             </div><!-- .hero-content -->
                         </div><!-- .swiper-slide -->
                       <?php endforeach;?>
@@ -215,7 +213,7 @@
                 <?php endforeach;?>
                 <div class="tags-list">
                 <?php foreach ($datalist as $k => $v): ?>
-                        <a class= "tag" id='<?=$v['classification']?>' value='<?=$v['classification']?>'><?=$v['classification']?></a>
+                        <a href=""><?=$v['classification']?></a>
                 <?php endforeach;?>
                     </div><!-- .tags-list -->
                 </div>
@@ -230,129 +228,6 @@
         </div><!-- .row -->
     </div><!-- .container -->
 </div><!-- .outer-container -->
-
-<!-- <footer class="sit-footer">
-    <div class="outer-container">
-        <div class="container-fluid">
-            <div class="row footer-recent-posts">
-                <div class="col-12 col-md-6 col-xl-3">
-                    <div class="footer-post-wrap flex justify-content-between">
-                        <figure>
-                            <a href="#"><img src="./assets/img/foot-1.jpg" alt=""></a>
-                        </figure>
-
-                        <div class="footer-post-cont flex flex-column justify-content-between">
-                            <header class="entry-header">
-                                <div class="posted-date">
-                                    January 30, 2018
-                                </div> .entry-header -->
-
-                                <!-- <h3><a href="#">My fall in love story</a></h3>
-
-                                <div class="tags-links">
-                                    <a href="#">#winter</a>
-                                    <a href="#">#love</a>
-                                    <a href="#">#snow</a>
-                                    <a href="#">#january</a>
-                                </div> .tags-links -->
-                            <!-- </header> .entry-header -->
-
-                            <!-- <footer class="entry-footer">
-                                <a class="read-more" href="#">read more</a>
-                            </footer> .entry-footer -->
-                        <!-- </div>.footer-post-cont -->
-                    <!-- </div>.footer-post-wrap -->
-                <!-- </div> --> 
-
-                <!-- <div class="col-12 col-md-6 col-xl-3">
-                    <div class="footer-post-wrap flex justify-content-between">
-                        <figure>
-                            <a href="#"><img src="./assets/img/foot-2.jpg" alt=""></a>
-                        </figure>
-
-                        <div class="footer-post-cont flex flex-column justify-content-between">
-                            <header class="entry-header">
-                                <div class="posted-date">
-                                    January 30, 2018
-                                </div> .entry-header -->
-
-                                <!-- <h3><a href="#">Man’s best friend</a></h3>
-
-                                <div class="tags-links">
-                                    <a href="#">#winter</a>
-                                    <a href="#">#love</a>
-                                    <a href="#">#snow</a>
-                                    <a href="#">#january</a> -->
-                                <!-- </div>.tags-links -->
-                            <!-- </header>.entry-header -->
-
-                            <!-- <footer class="entry-footer">
-                                <a class="read-more" href="#">read more</a>
-                            </footer>.entry-footer -->
-                        <!-- </div>.footer-post-cont -->
-                    <!-- </div>.footer-post-wrap -->
-                <!-- </div>.col --> 
-
-                <!-- <div class="col-12 col-md-6 col-xl-3">
-                    <div class="footer-post-wrap flex justify-content-between">
-                        <figure>
-                            <a href="#"><img src="./assets/img/foot-3.jpg" alt=""></a>
-                        </figure>
-
-                        <div class="footer-post-cont flex flex-column justify-content-between">
-                            <header class="entry-header">
-                                <div class="posted-date">
-                                    January 30, 2018
-                                </div><! .entry-header -->
-
-                                <!-- <h3><a href="#">Writing on a budget</a></h3> -->
-
-                                <!-- <div class="tags-links">
-                                    <a href="#">#winter</a>
-                                    <a href="#">#love</a>
-                                    <a href="#">#snow</a>
-                                    <a href="#">#january</a> -->
-                                <!-- </div>.tags-links -->
-                            <!-- </header>.entry-header -->
-<!-- 
-                            <footer class="entry-footer">
-                                <a class="read-more" href="#">read more</a>
-                            </footer>.entry-footer -->
-                        <!-- </div>.footer-post-cont -->
-                    <!-- </div>.footer-post-wrap -->
-                <!-- </div>.col --> 
-
-                <!-- <div class="col-12 col-md-6 col-xl-3">
-                    <div class="footer-post-wrap flex justify-content-between">
-                        <figure>
-                            <a href="#"><img src="./assets/img/foot-4.jpg" alt=""></a>
-                        </figure>
-
-                        <div class="footer-post-cont flex flex-column justify-content-between">
-                            <header class="entry-header">
-                                <div class="posted-date">
-                                    January 30, 2018
-                                </div> .entry-header -->
-
-                                <!-- <h3><a href="#">My fall in love story</a></h3>
-
-                                <div class="tags-links">
-                                    <a href="#">#winter</a>
-                                    <a href="#">#love</a>
-                                    <a href="#">#snow</a>
-                                    <a href="#">#january</a>
-                                </div> .tags-links -->
-                            <!-- </header>.entry-header --> 
-
-                            <!-- <footer class="entry-footer">
-                                <a class="read-more" href="#">read more</a>
-                            </footer>.entry-footer -->
-                        <!-- </div>.footer-post-cont -->
-                    <!-- </div>.footer-post-wrap -->
-                <!-- </div>.col -->
-            <!-- </div>.row -->
-        <!-- </div>.container-fluid -->
-    <!-- </div>.outer-container --> 
 
   
 
@@ -383,33 +258,10 @@
         </div><!-- .outer-container -->
     </div><!-- .footer-bar -->
 </footer><!-- .sit-footer -->
-<script>
 
-    $(function (){
-        
-        $('body').on('click','.tag',function() {
-            
-           var select = $(this);
-           var id =  select.attr('id');
-           $.post('./api/tag_search', {
-               id:id
-        }, function(data) {
-          alert(data.sys_msg);
-          if(data.sys_code == 200){
-            location.href = '<?=base_url(); ?>index_search/'+id;
-          }
-        },"json");
-
-        })
-    });
-
-
-
-</script>
-<script type='text/javascript' src='./assets/js/jquery.js'></script>
-<script type='text/javascript' src='./assets/js/swiper.min.js'></script>
-<script type='text/javascript' src='./assets/js/custom.js'></script>
-
+<script type='text/javascript' src='../assets/js/jquery.js'></script>
+<script type='text/javascript' src='../assets/js/swiper.min.js'></script>
+<script type='text/javascript' src='../assets/js/custom.js'></script>
 
 </body>
 </html>

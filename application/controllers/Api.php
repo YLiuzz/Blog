@@ -106,6 +106,22 @@ class Api extends CI_Controller
         echo json_encode($json_arr);
     }
 
+    //用tag 搜尋文章
+
+       public function tag_search()
+    {
+       $this->load->model('mod_blog_list');
+        $id = $this->input->get_post('id');
+        if ($this->mod_blog_list->tag_search($id)) {
+            $json_arr['sys_code'] = '200';
+    
+
+           
+        }
+         echo json_encode($json_arr);
+    
+    }
+
 
 
 
